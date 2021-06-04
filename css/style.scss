@@ -48,7 +48,7 @@ body {
 }
 
 .card {
-  position: relative;//para la posicion de la caja @
+  position: relative; //para la posicion de la caja @
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,14 +58,11 @@ body {
   min-height: 509px;
   max-height: 2000px;
   width: 920px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px 0;
   //Colocacion de imagen y posicionamiento
   background-image: url(../images/bg-pattern-desktop.svg);
   background-repeat: no-repeat;
   background-position: 1260% 65%;
-
-  
 
   &-sideLeft {
     &-image {
@@ -96,8 +93,6 @@ body {
       padding-bottom: 0.5rem;
       border-bottom: 1px solid rgba(153, 153, 153, 0.219); //coloca lineas
 
-      
-
       &-question {
         display: flex;
         justify-content: space-between;
@@ -106,7 +101,6 @@ body {
         p {
           font-size: 1.3rem;
         }
-
         :hover {
           cursor: pointer;
           color: var(--soft-red);
@@ -127,4 +121,61 @@ body {
 }
 .active > .card-sideRight-list-question-response{
   display: block;
+}
+
+
+@media (max-width: 930px) {
+  body {
+    min-height: 110vh;
+    max-height: auto;
+    width: 100vw;
+  }
+  .card {
+    &-sideLeft {
+      &-image {
+        &-super {
+          img {
+            transform: translateX(
+              -5rem
+            ); //mover la imagen a la posicion deseada
+          }
+        }
+      }
+    }
+    flex-direction: column;
+    width: 470px;
+    &-sideRight {
+      width: 75%;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .card {
+    background-position: 20% 5%;
+    margin-right: -2px;
+    &-sideLeft {
+      &-image {
+        overflow: visible;
+        &-super {
+          img {
+            width: 20rem;
+            height: 20rem;
+            transform: translate(0.2rem, -7rem);
+          }
+        }
+        &-superPost {
+          img {
+            width: 7rem;
+            height: 7rem;
+          }
+          transform: translateX(60px) translateY(-175px);
+        }
+      }
+    }
+    &-sideRight {
+      margin-top: -90px;
+      width: auto;
+    }
+  }
 }

@@ -55,8 +55,7 @@ body {
   min-height: 509px;
   max-height: 2000px;
   width: 920px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px 0;
   background-image: url(../images/bg-pattern-desktop.svg);
   background-repeat: no-repeat;
   background-position: 1260% 65%;
@@ -129,5 +128,55 @@ body {
 
 .active > .card-sideRight-list-question-response {
   display: block;
+}
+
+@media (max-width: 930px) {
+  body {
+    min-height: 110vh;
+    max-height: auto;
+    width: 100vw;
+  }
+  .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 470px;
+  }
+  .card-sideLeft-image-super img {
+    -webkit-transform: translateX(-5rem);
+            transform: translateX(-5rem);
+  }
+  .card-sideRight {
+    width: 75%;
+  }
+}
+
+@media (max-width: 360px) {
+  .card {
+    background-position: 20% 5%;
+    margin-right: -2px;
+  }
+  .card-sideLeft-image {
+    overflow: visible;
+  }
+  .card-sideLeft-image-super img {
+    width: 20rem;
+    height: 20rem;
+    -webkit-transform: translate(0.2rem, -7rem);
+            transform: translate(0.2rem, -7rem);
+  }
+  .card-sideLeft-image-superPost {
+    -webkit-transform: translateX(60px) translateY(-175px);
+            transform: translateX(60px) translateY(-175px);
+  }
+  .card-sideLeft-image-superPost img {
+    width: 7rem;
+    height: 7rem;
+  }
+  .card-sideRight {
+    margin-top: -90px;
+    width: auto;
+  }
 }
 /*# sourceMappingURL=style.css.map */
